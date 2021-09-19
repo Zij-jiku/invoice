@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Unibox Hotel Invoice</title>
+
+		<style>
+			.invoice-box {
+				max-width: 800px;
+				margin: auto;
+				padding: 30px;
+				border: 1px solid #eee;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+				font-size: 16px;
+				line-height: 24px;
+				font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+				color: #555;
+			}
+
+			.invoice-box table {
+				width: 100%;
+				line-height: inherit;
+			}
+
+			.invoice-box table td {
+				padding: 5px;
+				vertical-align: top;
+			}
+
+			/* .invoice-box table tr td:nth-child(2) {
+				text-align: right;
+			} */
+
+			.invoice-box table tr.top table td {
+				padding-bottom: 20px;
+			}
+
+			.invoice-box table tr.top table td.title {
+				font-size: 45px;
+				line-height: 45px;
+				color: #333;
+			}
+
+			.invoice-box table tr.information table td {
+				padding-bottom: 40px;
+			}
+
+			.invoice-box table tr.heading td {
+				background: #eee;
+				border-bottom: 1px solid #ddd;
+				font-weight: bold;
+				margin-bottom: 5px;
+			}
+
+			.invoice-box table tr.details td {
+				padding-bottom: 20px;
+			}
+
+			.invoice-box table tr.item td {
+				border-bottom: 1px solid #eee;
+			}
+
+			.invoice-box table tr.item.last td {
+				border-bottom: none;
+			}
+
+			.invoice-box table tr.total td:nth-child(2) {
+				border-top: 2px solid #eee;
+				font-weight: bold;
+			}
+
+			@media only screen and (max-width: 600px) {
+				.invoice-box table tr.top table td {
+					width: 100%;
+					display: block;
+					text-align: center;
+				}
+
+				.invoice-box table tr.information table td {
+					width: 100%;
+					display: block;
+					text-align: center;
+				}
+			}
+
+			/** RTL **/
+			.invoice-box.rtl {
+				direction: rtl;
+				font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+			}
+
+			.invoice-box.rtl table {
+				text-align: right;
+			}
+
+			.invoice-box.rtl table tr td:nth-child(2) {
+				text-align: left;
+			}
+
+
+            .table-striped>tbody>tr:nth-child(odd)>td, 
+            .table-striped>tbody>tr:nth-child(odd)>th {
+            background-color: rgb(141, 136, 136);
+            color: #fff;
+            }
+
+		</style>
+	</head>
+
+	<body>
+		<div class="invoice-box">
+			<img src="https://i.ibb.co/Sr7JfvL/4.png" alt="unibox-hotel-logo" border="0" style="position: absolute; top: 50%; left: 50%; transform:  translate(-50%); opacity: .2">
+
+           
+
+			<table cellpadding="0" cellspacing="0">
+				<tr class="top">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td class="title">
+									<img src="https://i.ibb.co/Sr7JfvL/4.png" style="width: 100%; max-width: 300px" />
+								</td>
+
+								<td  style="text-align: right;">
+									Cure ID #: {{ $coupon_info->user_id }}<br />
+									Ap. Date : {{ $coupon_info->date }} <br />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="information">
+					<td colspan="2">
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td>
+									2282, Purbo Monipur, Begum Rokeya Sarani Road, <br />
+									Mirpur, Dhaka-1216  <br>
+                                    curepointchamber@gmail.com
+								</td>
+
+								<td style="text-align: right;">
+								 <span style="font-weight: 700">Patient</span>	<br />
+									<span>{{ $patient_info->name }}</span><br />
+									{{ $patient_info->phone_number }}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+            </table>
+
+            <table class="table table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="col">SL No.</th>
+                    <th scope="col">Medicine Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Instuction</th>
+                    <th scope="col">Day</th>
+                  </tr>
+               
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Napa</td>
+                    <td>Fever</td>
+                    <td>After eating</td>
+                    <td>1 week</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Napa</td>
+                    <td>Fever</td>
+                    <td>After eating</td>
+                    <td>2 week</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Napa</td>
+                    <td>Fever</td>
+                    <td>After eating</td>
+                    <td>3 week</td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+
+
+            <table>
+                <tr class="item last">
+                    <td>
+                        <img src="https://i.ibb.co/Sr7JfvL/4.png" style="height: 25px; margin-top: 30px;"/>
+                    </td>
+                </tr>
+
+                <tr class="total">
+                    <td style="padding: 0; padding-left: 10px;">Thank you</td>
+                </tr>
+            </table>
+
+		</div>
+	</body>
+</html>
