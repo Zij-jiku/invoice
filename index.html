@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Unibox Hotel Invoice</title>
+		<title>CurepointChamber Prescription Invoice</title>
 
 		<style>
 			.invoice-box {
@@ -15,6 +15,7 @@
 				line-height: 24px;
 				font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
 				color: #555;
+
 			}
 
 			.invoice-box table {
@@ -30,10 +31,6 @@
 			/* .invoice-box table tr td:nth-child(2) {
 				text-align: right;
 			} */
-
-			.invoice-box table tr.top table td {
-				padding-bottom: 20px;
-			}
 
 			.invoice-box table tr.top table td.title {
 				font-size: 45px;
@@ -97,19 +94,12 @@
 				text-align: left;
 			}
 
-
-            .table-striped>tbody>tr:nth-child(odd)>td, 
-            .table-striped>tbody>tr:nth-child(odd)>th {
-            background-color: rgb(141, 136, 136);
-            color: #fff;
-            }
-
 		</style>
 	</head>
 
 	<body>
 		<div class="invoice-box">
-			<img src="https://i.ibb.co/Sr7JfvL/4.png" alt="unibox-hotel-logo" border="0" style="position: absolute; top: 50%; left: 50%; transform:  translate(-50%); opacity: .2">
+			<img src="https://i.ibb.co/Sr7JfvL/4.png" alt="CurepointChamber logo" border="0" style="position: absolute; top: 50%; left: 50%; transform:  translate(-50%); opacity: .2">
 
            
 
@@ -122,7 +112,7 @@
 									<img src="https://i.ibb.co/Sr7JfvL/4.png" style="width: 100%; max-width: 300px" />
 								</td>
 
-								<td  style="text-align: right;">
+								<td  style="text-align: right; margin-top: 0px;">
 									Cure ID #: {{ $coupon_info->user_id }}<br />
 									Ap. Date : {{ $coupon_info->date }} <br />
 								</td>
@@ -135,16 +125,19 @@
 					<td colspan="2">
 						<table cellpadding="0" cellspacing="0">
 							<tr>
-								<td>
-									2282, Purbo Monipur, Begum Rokeya Sarani Road, <br />
-									Mirpur, Dhaka-1216  <br>
-                                    curepointchamber@gmail.com
+								<td style="font-size: 16px;">
+									Shah Jalal Plaza,2283, Begum Rokeya Saroni Road <br>
+									Mirpur -10, Dhaka-1216, Bangladesh
+									<br>
+                                   <strong style="color: rgb(139, 215, 245);"> curepointchamber@gmail.com</strong> <br>
+                                   <strong style="color: rgb(96, 233, 243);"> +88-0161-41-67-677</strong>
 								</td>
 
 								<td style="text-align: right;">
 								 <span style="font-weight: 700">Patient</span>	<br />
-									<span>{{ $patient_info->name }}</span><br />
-									{{ $patient_info->phone_number }}
+									<span>{{ $patient_info->name }} <strong> (years)</strong></span><br />
+									<span>{{ $patient_info->phone_number }}</span><br />
+									<span>{{ $patient_info->patient_address }}</span><br />
 								</td>
 							</tr>
 						</table>
@@ -152,42 +145,82 @@
 				</tr>
             </table>
 
-            <table class="table table-striped">
+            <table class="table table-striped" style="margin-bottom: 30px;">
                 <tbody>
-                  <tr>
-                    <th scope="col">SL No.</th>
+                  <tr style="background-color: rgb(63, 183, 204); color: #fff; font-size: 14px;">
+                    <th scope="col">Medicine No.</th>
                     <th scope="col">Medicine Name</th>
                     <th scope="col">Type</th>
                     <th scope="col">Instuction</th>
                     <th scope="col">Day</th>
                   </tr>
                
-                  <tr>
+                  <tr style="font-size: 14px;">
                     <th scope="row">1</th>
                     <td>Napa</td>
                     <td>Fever</td>
                     <td>After eating</td>
                     <td>1 week</td>
                   </tr>
-
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Napa</td>
-                    <td>Fever</td>
-                    <td>After eating</td>
-                    <td>2 week</td>
-                  </tr>
-
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Napa</td>
-                    <td>Fever</td>
-                    <td>After eating</td>
-                    <td>3 week</td>
-                  </tr>
-
+				  
                 </tbody>
-              </table>
+            </table>
+
+			<table class="table table-striped" style="margin-bottom: 20px;">
+                <tbody>
+                  <tr style="background-color: rgb(63, 183, 204); color: #fff; font-size: 14px;">
+                    <th scope="col">Total Medicine Price (tk)</th>
+                    <th scope="col">Doctor Visit (tk)</th>
+                    <th scope="col">Payable Amount (tk)</th>
+                    <th scope="col">Discount (%)</th>
+                    <th scope="col">Total (tk)</th>
+                    
+                  </tr>
+               
+                  <tr style="font-size: 14px;">
+                    <td>(+) 600 tk</td>
+                    <td>(+) 1000 tk</td>
+                    <td> (-) 100tk </td>
+                    <td> (-) 50%</td>
+                    <th scope="row"> = 1700 tk</th>
+                  </tr>
+                </tbody>
+            </table>
+
+			<table class="table table-striped" style="margin-bottom: 20px;">
+                <tbody>
+                  <tr style="background-color: rgb(63, 183, 204); color: #fff; font-size: 14px;">
+                    <th scope="col">Next Appointment Date</th>
+                    <th scope="col">Payment Type</th>
+                    <th scope="col">Payment Status</th>
+					<th scope="col">Grand Total  (tk)</th>
+                  </tr>
+               
+                  <tr style="font-size: 14px; background: #000; color: #fff;">
+                    <th scope="row"> 12-12-12 </th>
+                    <th scope="row">  Cash </th>
+                    <th scope="row"> Paid </th>
+                    <th scope="row"> 850 tk </th>
+                  </tr>
+                </tbody>
+            </table>
+
+			<table class="table table-striped">
+                <tbody>
+                  <tr style="background-color: rgb(63, 183, 204); color: #fff; font-size: 14px;">
+                    <th scope="col">Total Bill (tk)</th>
+                    <th scope="col"> = </th>
+					<th scope="col"> 850 tk</th>
+                  </tr>
+                </tbody>
+            </table>
+
+
+			
+
+			
+
+
 
 
 
@@ -199,7 +232,7 @@
                 </tr>
 
                 <tr class="total">
-                    <td style="padding: 0; padding-left: 10px;">Thank you</td>
+                    <td style="padding: 0; padding-left: 10px;"><strong>Thank You</strong></td>
                 </tr>
             </table>
 
